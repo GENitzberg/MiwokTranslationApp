@@ -19,17 +19,17 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> numbersArray = new ArrayList<String>();
-        numbersArray.add(0,"One");
-        numbersArray.add(1,"Two");
-        numbersArray.add(2,"Three");
-        numbersArray.add(3,"Four");
-        numbersArray.add(4,"Five");
-        numbersArray.add(5,"Six");
-        numbersArray.add(6,"Seven");
-        numbersArray.add(7,"Eight");
-        numbersArray.add(8,"Nine");
-        numbersArray.add(9,"Ten");
+        ArrayList<Word> numbersArray = new ArrayList<Word>();
+        numbersArray.add(new Word("One", "Lutti"));
+        numbersArray.add(new Word("Two", "Otiiko"));
+        numbersArray.add(new Word("Three", "Tolookosu"));
+        numbersArray.add(new Word("Four","Oyyisa"));
+        numbersArray.add(new Word("Five", "Massokka"));
+        numbersArray.add(new Word("Six", "Temmokka"));
+        numbersArray.add(new Word("Seven","Kenekaku"));
+        numbersArray.add(new Word("Eight", "Kawinta"));
+        numbersArray.add(new Word("Nine", "Wo'e"));
+        numbersArray.add(new Word("Ten", "Na'aacha"));
 
         //Creating the LinearLayout view to display the ArrayList on screen
 //        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
@@ -39,8 +39,8 @@ public class NumbersActivity extends AppCompatActivity {
 //            rootView.addView(wordView);
 //        }
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, numbersArray);
+        WordAdapter adapter = new WordAdapter(this, numbersArray);
         ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(itemsAdapter);
+        listView.setAdapter(adapter);
     }
 }
