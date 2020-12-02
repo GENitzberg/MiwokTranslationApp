@@ -33,7 +33,7 @@ public class NumbersActivity extends AppCompatActivity {
 //            rootView.addView(wordView);
 //        }
 
-        WordAdapter adapter = new WordAdapter(this, numbersArray);
+        WordAdapter adapter = new WordAdapter(this, numbersArray, R.color.category_numbers);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);
     }
