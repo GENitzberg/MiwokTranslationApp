@@ -5,7 +5,8 @@ import android.media.Image;
 public class Word {
     private String mMiwokTranslation;
     private String mDefaultTranslation;
-    private int mImageTranslation;
+    private int mImageTranslation = NO_IMAGE_PROVIDED;
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     //create the constructor
     public Word(String defaultTranslation, String miwokTranslation)
@@ -29,5 +30,13 @@ public class Word {
     //get the image translation of the selected word
     public int getImageTranslation(){
         return mImageTranslation;
+    }
+
+    public boolean hasImage(){
+        if(mImageTranslation == NO_IMAGE_PROVIDED){
+            return false;
+        }
+        else
+            return true;
     }
 }
