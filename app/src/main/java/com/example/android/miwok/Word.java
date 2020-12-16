@@ -7,17 +7,20 @@ public class Word {
     private String mDefaultTranslation;
     private int mImageTranslation = NO_IMAGE_PROVIDED;
     private static final int NO_IMAGE_PROVIDED = -1;
+    private int mAudioResource;
 
     //create the constructor
-    public Word(String defaultTranslation, String miwokTranslation)
+    public Word(String defaultTranslation, String miwokTranslation, int audioResource)
     {
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
+        mAudioResource = audioResource;
     }
-    public Word(String defaultTranslation, String miwokTranslation, int imageTranslation){
+    public Word(String defaultTranslation, String miwokTranslation, int imageTranslation, int audioResource){
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
         mImageTranslation = imageTranslation;
+        mAudioResource = audioResource;
     }
     //get the Miwok translation of the selected word
     public String getMiwokTranslation(){
@@ -30,6 +33,10 @@ public class Word {
     //get the image translation of the selected word
     public int getImageTranslation(){
         return mImageTranslation;
+    }
+    //get the audio resource of the selected word
+    public int getAudioResource(){
+        return mAudioResource;
     }
 
     public boolean hasImage(){
